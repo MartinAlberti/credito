@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: antiquewhite;
+    background-color: #112B3C;
+
+
+}
+
+#contenedor {
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: auto, auto, auto;
+    grid-template-areas:
+        "cambio     cambio"
+        "form       credito "
+        "historial  historial";
+}
+
+.cambio {
+    display: inline-block;
+    grid-area: cambio;
+    padding-top: 20px;
+    width: 100%;
+    background-color: #F66B0E;
+}
+.cambioUl{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cambioUl li {
+    display: inline-block;
+    list-style-type: none;
+    font-size: larger;
+    
+}
+
+.form {
+    justify-content: center;
+    margin-left: 10%;
+    grid-area: form;
+}
+
+#formulario {
+    width: 500px;
+    margin-top: 100px;
+    font-size: 1rem;
+    padding-left: 40px;
+    margin-bottom: 50px;
+
+}
+
+.form-control {
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.formulario__label:active {
+    transform: scale(1.1);
+}
+
+.infoCuotas {
+    margin-top: 10px;
+    font-size: small;
+    color: rgb(184, 184, 184);
+
+}
+
+
+.nuevoCredito {
+    grid-area: credito;
+    font-size: 1.2rem;
+    margin-top: 100px;
+    border-radius: 7%;
+    background-color: #143a53;
+    width: fit-content;
+    height: fit-content;
+}
+
+.nuevoCredito ul {
+    padding: 50px;
+    list-style-type: none;
+}
+
+.nuevoCredito li {
+    padding: 10px 5px 10px 5px;
+}
+
+.mostrarFecha {
+    font-weight: 200;
+    text-align: end;
+}
+
+.mostrarNombre {
+    font-weight: 600;
+}
+
+.hide {
+    display: none;
+}
+
+
+#divHistorial {
+    background-color: #112B3C;
+    grid-area: historial;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    margin-top: 100px;
+    justify-content: start;
+    align-items: center;
+}
+
+#divHistorial ul {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 7%;
+    background-color: #143a53;
+    margin-left: 50px;
+    padding: 50px;
+    list-style-type: none;
+}
+
+#divHistorial li {
+    padding: 10px 5px 10px 5px;
+}
+
+.formulario__btn {
+    margin-top: 20px;
+    background-color: #F66B0E;
+    border-style: none;
+
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+    background-color: #F66B0E !important;
+
+}
+
+.form-text {
+    color: rgb(227, 32, 32);
+    font-weight: 100;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #F66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo {
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+.formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+.animacionRojo {
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+
+}
+
+.animacionVerde {
+    border-style: solid;
+    border-width: 2px;
+    border-color: green;
+}
+
+.error__nombre {
+    display: none;
+}
