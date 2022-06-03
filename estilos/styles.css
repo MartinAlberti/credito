@@ -250,6 +250,10 @@ body {
     #formulario {
         width: 80%;
         margin-bottom: 0;
+        margin-top: 40px;
+    }
+    .infoCuotas{
+        font-size: x-small;
     }
 
     .formulario__grupo-btn-enviar {
