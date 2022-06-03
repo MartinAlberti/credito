@@ -249,6 +249,7 @@ body {
 
     #formulario {
         width: 80%;
+        margin-bottom: 0;
     }
 
     .formulario__grupo-btn-enviar {
@@ -270,8 +271,24 @@ body {
         
     }
 
-    #divHistorial{
+   
+    #divHistorial {
+        background-color: #112B3C;
+        grid-area: historial;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap-reverse;
         margin-top: 0;
+        justify-content: center;
+        align-items: center;
     }
-
+    #divHistorial ul {
+       
+        margin-left: 0;
+        padding: 50px;
+        list-style-type: none;
+    }
+    #divHistorial li {
+        padding: 5px 5px 5px 5px;
+    }
 }
