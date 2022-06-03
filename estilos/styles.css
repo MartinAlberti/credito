@@ -220,10 +220,12 @@ body {
             "historial";
     }
 
-
+    .cambio {
+        font-size: 0.5rem;
+    }
     .nuevoCredito {
         grid-area: credito;
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-top: 100px;
         border-radius: 7%;
         background-color: #143a53;
