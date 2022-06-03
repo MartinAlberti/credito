@@ -77,7 +77,7 @@ formulario.addEventListener('submit', (e) => {
 
     const terminos = document.getElementById('terminos');
     
-    if (campos.nombre && campos.apellido && campos.monto && campos.cuotas && terminos.checked) {
+    if (campos.nombre && campos.apellido && campos.monto  && campos.cuotas && terminos.checked) {
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
         divHistorial.classList.add("hide")
         proceso()
@@ -107,7 +107,6 @@ mostrarHTML = (obj) => {
 const obtenerDatosJson = () => {
     fetch("../data/data.json")
         .then((respuesta) => {
-            console.log(respuesta)
             return respuesta.json()
         })
         .then((dato) => {
