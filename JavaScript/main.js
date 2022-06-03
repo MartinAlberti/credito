@@ -76,10 +76,11 @@ formulario.addEventListener('submit', (e) => {
     e.preventDefault();;
 
     const terminos = document.getElementById('terminos');
-    
-    if (campos.nombre && campos.apellido && campos.monto  && campos.cuotas && terminos.checked) {
+
+    if (campos.nombre && campos.apellido && campos.monto && campos.cuotas && terminos.checked) {
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
         divHistorial.classList.add("hide")
+        terminosDiv.classList.add("hide")
         proceso()
         botonHistorial.classList.remove("hide")
 
@@ -92,11 +93,25 @@ formulario.addEventListener('submit', (e) => {
 
 const botonHistorial = document.querySelector(".historial__btn")
 const botonCredito = document.querySelector(".enviar")
-botonCredito.addEventListener("click" , ()=>{
-    location.href="#credito"
+const botonTerminos = document.querySelector(".terminos")
+const botonVolver = document.querySelector(".btnVolver")
+const terminosDiv = document.querySelector("#terminosTexto")
+
+botonCredito.addEventListener("click", () => {
+    location.href = "#credito"
 })
-botonHistorial.addEventListener("click" , ()=>{
-    location.href="#divHistorial"
+botonHistorial.addEventListener("click", () => {
+    location.href = "#divHistorial"
+})
+botonVolver.addEventListener("click", () => {
+    
+    terminosDiv.classList.add("hide")
+    location.href = "#cambio"
+})
+botonTerminos.addEventListener("click", () => {
+    
+    terminosDiv.classList.remove("hide")
+    location.href = "#terminosDiv"
 })
 
 
@@ -118,9 +133,7 @@ const obtenerDatosJson = () => {
         .then((dato) => {
             mostrarHTML(dato)
         })
-        .catch((err) => {
-            console.log("Mi error: ", err)
-        })
+        
 }
 obtenerDatosJson()
 
@@ -311,6 +324,7 @@ function proceso() {
     i += 1
 
 }
-function historialHide(){
+
+function historialHide() {
     divHistorial.classList.remove("hide")
 }

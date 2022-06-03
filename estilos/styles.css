@@ -13,6 +13,18 @@ body {
 
 }
 
+a, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+.terminos{
+    font-weight: 800;
+}
+.terminos:hover{
+    transform: scale(1.1) ;
+    
+}
+
 #contenedor {
     display: grid;
     grid-template-columns: 1fr, 1fr;
@@ -44,6 +56,7 @@ body {
 
 }
 
+
 .form {
     justify-content: center;
     margin-left: 10%;
@@ -64,9 +77,6 @@ body {
     margin-top: 5px;
 }
 
-.formulario__label:active {
-    transform: scale(1.1);
-}
 
 .infoCuotas {
     margin-top: 10px;
@@ -213,6 +223,18 @@ body {
 }
 
 
+#terminosTexto{
+    font-size: 0.8rem;
+    margin: 400px 20%;
+    padding-top: 100px;
+}
+.btnVolver{
+    background-color: #F66B0E;
+    border-style: none ;
+}
+
+
+
 @media screen and (max-width: 1100px) {
 
 
@@ -299,4 +321,11 @@ body {
     #divHistorial li {
         padding: 5px 5px 5px 5px;
     }
+
+    
+#terminosTexto{
+    font-size: 0.8rem;
+  
+    margin: 400px 30px;
+}
 }
