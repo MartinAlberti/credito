@@ -215,8 +215,8 @@ body {
         grid-template-rows: auto, auto, auto, auto;
         grid-template-areas:
             "cambio"
-            "credito"
             "form"
+            "credito"
             "historial";
     }
 
