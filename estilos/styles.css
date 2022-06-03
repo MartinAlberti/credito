@@ -30,7 +30,8 @@ body {
     width: 100%;
     background-color: #F66B0E;
 }
-.cambioUl{
+
+.cambioUl {
     display: flex;
     justify-content: space-around;
 }
@@ -39,7 +40,7 @@ body {
     display: inline-block;
     list-style-type: none;
     font-size: larger;
-    
+
 }
 
 .form {
@@ -68,6 +69,7 @@ body {
 
 .infoCuotas {
     margin-top: 10px;
+    margin-bottom: 0;
     font-size: small;
     color: rgb(184, 184, 184);
 
@@ -103,7 +105,7 @@ body {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 
@@ -139,6 +141,12 @@ body {
 
 }
 
+.historial__btn {
+    margin-left: 40px;
+    background-color: #F66B0E;
+    border-style: none;
+}
+
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:active,
@@ -163,6 +171,7 @@ body {
 
 .formulario__mensaje-activo {
     display: block;
+    margin-top: 10px;
 }
 
 .formulario__mensaje p {
@@ -194,4 +203,51 @@ body {
 
 .error__nombre {
     display: none;
+}
+
+
+@media screen and (max-width: 1100px) {
+
+
+    #contenedor {
+        display: grid;
+        grid-template-columns: 1fr, ;
+        grid-template-rows: auto, auto, auto, auto;
+        grid-template-areas:
+            "cambio"
+            "credito"
+            "form"
+            "historial";
+    }
+
+
+    .nuevoCredito {
+        grid-area: credito;
+        font-size: 1.2rem;
+        margin-top: 100px;
+        border-radius: 7%;
+        background-color: #143a53;
+        width: fit-content;
+        height: fit-content;
+        justify-self: center;
+    }
+
+    .form {
+        justify-self: center;
+        margin: 0;
+    }
+    .formulario__grupo-btn-enviar{
+        display: flex;
+        justify-content: center;
+    }
+    .formulario__btn {
+        justify-content: center;
+    }
+    .historial__btn-div {
+        display: flex;
+justify-content: center;
+margin-bottom: 100px;
+    }
+
+
 }
