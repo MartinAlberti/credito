@@ -91,7 +91,13 @@ formulario.addEventListener('submit', (e) => {
 });
 
 const botonHistorial = document.querySelector(".historial__btn")
-botonHistorial.addEventListener("click", historialHide)
+const botonCredito = document.querySelector(".enviar")
+botonCredito.addEventListener("click" , ()=>{
+    location.href="#credito"
+})
+botonHistorial.addEventListener("click" , ()=>{
+    location.href="#divHistorial"
+})
 
 
 
@@ -300,7 +306,7 @@ function proceso() {
         localStorage.setItem(`operacion ${i}`, JSON.stringify(nuevoCredito))
     }
 
-    
+    botonHistorial.addEventListener("click", historialHide)
     historialTexto()
     i += 1
 
