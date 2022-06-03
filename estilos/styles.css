@@ -237,6 +237,10 @@ body {
     .form {
         justify-self: center;
         margin: 0;
+        
+    }
+    #formulario{
+        width: 80%;
     }
     .formulario__grupo-btn-enviar{
         display: flex;
