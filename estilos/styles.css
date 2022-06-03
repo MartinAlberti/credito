@@ -244,14 +244,15 @@ body {
     }
     .formulario__grupo-btn-enviar{
         display: flex;
-        justify-content: center;
+        justify-content: start;
     }
     .formulario__btn {
         justify-content: center;
+        margin-bottom: 0;
     }
     .historial__btn-div {
         display: flex;
-justify-content: center;
+justify-content: start;
 margin-bottom: 100px;
     }
 

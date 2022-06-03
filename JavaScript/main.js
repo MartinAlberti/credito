@@ -91,7 +91,7 @@ formulario.addEventListener('submit', (e) => {
 });
 
 const botonHistorial = document.querySelector(".historial__btn")
-
+botonHistorial.addEventListener("click", historialHide)
 
 
 
@@ -300,7 +300,7 @@ function proceso() {
         localStorage.setItem(`operacion ${i}`, JSON.stringify(nuevoCredito))
     }
 
-    botonHistorial.addEventListener("click", historialHide)
+    
     historialTexto()
     i += 1
 
