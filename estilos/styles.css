@@ -16,10 +16,11 @@ body {
 #contenedor {
     display: grid;
     grid-template-columns: 1fr, 1fr;
-    grid-template-rows: auto, auto, auto;
+    grid-template-rows: auto,auto, auto, auto;
     grid-template-areas:
         "cambio     cambio"
         "form       credito "
+        "boton      none"
         "historial  historial";
 }
 
@@ -53,7 +54,7 @@ body {
     width: 500px;
     margin-top: 100px;
     font-size: 1rem;
-    padding-left: 40px;
+    /* padding-left: 40px; */
     margin-bottom: 50px;
 
 }
@@ -141,10 +142,15 @@ body {
 
 }
 
+.historial__btn-div {
+    grid-area: boton;
+    margin-left: 10%;   
+}
 .historial__btn {
-    margin-left: 40px;
     background-color: #F66B0E;
     border-style: none;
+
+
 }
 
 .btn-primary,
@@ -212,21 +218,22 @@ body {
     #contenedor {
         display: grid;
         grid-template-columns: 1fr, ;
-        grid-template-rows: auto, auto, auto, auto;
+        grid-template-rows: auto, auto, auto, auto, auto;
         grid-template-areas:
             "cambio"
             "form"
             "credito"
+            "boton"
             "historial";
     }
 
     .cambio {
         font-size: 0.5rem;
     }
+
     .nuevoCredito {
         grid-area: credito;
         font-size: 1rem;
-        margin-top: 100px;
         border-radius: 7%;
         background-color: #143a53;
         width: fit-content;
@@ -237,24 +244,34 @@ body {
     .form {
         justify-self: center;
         margin: 0;
-        
+
     }
-    #formulario{
+
+    #formulario {
         width: 80%;
     }
-    .formulario__grupo-btn-enviar{
+
+    .formulario__grupo-btn-enviar {
         display: flex;
         justify-content: start;
     }
+
     .formulario__btn {
         justify-content: center;
         margin-bottom: 0;
     }
+
     .historial__btn-div {
-        display: flex;
-justify-content: start;
-margin-bottom: 100px;
+        grid-area: boton;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        text-align: center;
+        margin-left: 0;
+        
     }
 
+    #divHistorial{
+        margin-top: 0;
+    }
 
 }
