@@ -28,12 +28,13 @@ a, a:focus, a:active {
 #contenedor {
     display: grid;
     grid-template-columns: 1fr, 1fr;
-    grid-template-rows: auto,auto, auto, auto;
+    grid-template-rows: auto,auto, auto, auto, ;
     grid-template-areas:
         "cambio     cambio"
         "form       credito "
         "boton      none"
-        "historial  historial";
+        "historial  historial"
+        ;
 }
 
 .cambio {
@@ -144,6 +145,7 @@ a, a:focus, a:active {
 #divHistorial li {
     padding: 10px 5px 10px 5px;
 }
+
 
 .formulario__btn {
     margin-top: 20px;

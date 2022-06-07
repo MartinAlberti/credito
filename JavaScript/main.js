@@ -16,10 +16,7 @@ const dateTime = luxon.DateTime;
 let now = dateTime.now()
 let fecha = now.toLocaleString(dateTime.DATETIME_SHORT)
 
-
-
-
-
+// formulario
 
 const expresiones = {
     nombre: /^[a-z,.'-]+$/i,
@@ -70,6 +67,10 @@ const validarCampo = (expresion, input, campo) => {
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
+    input.addEventListener('keyup', () => {
+        divHistorial.classList.add("hide")
+
+    });
 });
 
 formulario.addEventListener('submit', (e) => {
@@ -80,7 +81,6 @@ formulario.addEventListener('submit', (e) => {
     if (campos.nombre && campos.apellido && campos.monto && campos.cuotas && terminos.checked) {
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
         divHistorial.classList.add("hide")
-        terminosDiv.classList.add("hide")
         proceso()
         botonHistorial.classList.remove("hide")
 
@@ -90,6 +90,8 @@ formulario.addEventListener('submit', (e) => {
 
     }
 });
+
+//  botones
 
 const botonHistorial = document.querySelector(".historial__btn")
 const botonCredito = document.querySelector(".enviar")
@@ -102,19 +104,21 @@ botonCredito.addEventListener("click", () => {
 })
 botonHistorial.addEventListener("click", () => {
     location.href = "#divHistorial"
+    divHistorial.classList.remove("hide")
+
 })
 botonVolver.addEventListener("click", () => {
-    
-    terminosDiv.classList.add("hide")
     location.href = "#cambio"
+    terminosDiv.classList.add("hide")
+
 })
 botonTerminos.addEventListener("click", () => {
-    
-    terminosDiv.classList.remove("hide")
     location.href = "#terminosDiv"
+    terminosDiv.classList.remove("hide")
+
 })
 
-
+// cambio
 
 mostrarHTML = (obj) => {
     cambioUl.innerHTML = `
@@ -133,13 +137,13 @@ const obtenerDatosJson = () => {
         .then((dato) => {
             mostrarHTML(dato)
         })
-        
+
 }
 obtenerDatosJson()
 
 const cambioUl = document.querySelector(".cambioUl")
 
-
+// calculo
 
 function proceso() {
 
@@ -178,18 +182,15 @@ function proceso() {
     }
 
 
-
     function interesMensual() {
         mensual = (intereses / cuotas).toFixed(2);
     }
-
 
     function calcularTotal() {
 
         montoTotal = (monto + intereses).toFixed(2);
 
     }
-
 
     function calcularCuotas() {
 
@@ -205,7 +206,6 @@ function proceso() {
     intereses = intereses.toFixed(2)
     let MostrarNuevoCredito = document.querySelector(".nuevoCredito")
     MostrarNuevoCredito.classList.remove("hide")
-
 
     let mostrarFecha = document.querySelector(".mostrarFecha")
     mostrarFecha.textContent = fecha;
@@ -230,7 +230,6 @@ function proceso() {
 
 
 
-
     function historialCreditos(operacionH, fechaH, nombreH, creditoH, cuotasH, mensualH, interesesH, totalH, montoCuotasH) {
         this.operacionH = i;
         this.fechaH = fecha;
@@ -241,14 +240,10 @@ function proceso() {
         this.interesesH = intereses;
         this.totalH = montoTotal;
         this.montoCuotasH = montoCuotas;
-
-
     }
-
 
     const nuevoCredito = new historialCreditos((i, fecha, nombreApellido, monto, cuotas, mensual, intereses, montoTotal, montoCuotas))
     historialOperaciones.unshift(nuevoCredito)
-    // console.log(historialOperaciones)
 
     function historialTexto() {
 
@@ -319,12 +314,6 @@ function proceso() {
         localStorage.setItem(`operacion ${i}`, JSON.stringify(nuevoCredito))
     }
 
-    botonHistorial.addEventListener("click", historialHide)
     historialTexto()
     i += 1
-
-}
-
-function historialHide() {
-    divHistorial.classList.remove("hide")
 }
